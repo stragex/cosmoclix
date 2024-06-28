@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cosmoclix: Better skin everyday</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="cookie-banner" id="cookieBanner">
+        <p>This website uses cookies to ensure you get the best experience on our website.</p>
+        <button onclick="acceptCookies()">Accept</button>
+        <button oncli0ck="rejectCookies()">Reject</button>
+    </div>
+    <script src="script.js"></script>
+
+    <header>
+        <div class="container" style="text-align: center;">
+            <a href="#"><img src="huh.png" alt="CosmoClix" width="300px"></a><br><br>
+
+            <nav>
+                <ul>
+                    <li><a href="#" class="dropdown">Shop</a></li>
+                    <li><a href="#">Hair Care</a></li>
+                    <li><a href="skin.html">Skin Care</a></li>
+                    <li><a href="#">Combo</a></li>
+                    <li><a href="#">Lifestyle</a></li>
+                    <li><a href="blog.html">Our Blog</a></li>
+
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <p style="text-align: center; color: rgb(0, 115, 255);">Offer ends in</p>
+    <div id="countdown"></div>
+<script>
+  // Set the offer end date (year, month (0-based), day, hour, minute, second)
+  const offerEndDate = new Date('2024-06-16T23:59:59');
+
+  function updateCountdown() {
+    const now = new Date();
+    const timeDifference = offerEndDate - now;
+
+    // Calculate days, hours, minutes, and seconds
+    const days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
+
+    // Display the countdown
+    document.getElementById('countdown').innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+
+    // If the countdown is over, display a message
+    if (timeDifference < 0) {
+      document.getElementById('countdown').innerHTML = 'Offer has ended';
+    }
+  }
+
+  // Update the countdown every second
+  setInterval(updateCountdown, 1000);
+
+  // Initial call to display the countdown
+  updateCountdown();
+</script>
+
+    <section id="hero">
+        <div class="container">
+            <h2>Welcome to Our Store</h2>
+            <p>Discover our wide range of cosmetic products</p>
+            
+        </div>
+    </section>
+
+    <section id="featured">
+        <div class="container">
+            <h2>Essential Combos</h2>
+            <div class="product-card">
+                <img src="product1.jpg" alt="Product 1" width="300px">
+                <h4>Neem Comb Combo</h4><br>
+                <a href="#" class="btn">Shop Now</a>
+            </div>
+            <div class="product-card">
+                <img src="fss.png" alt="Combo 2" width="300px">
+                <h4>Face Wash, Skin Lightening and Sheet Mask Combo</h4><br>
+                <a href="#" class="btn">Shop Now</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="testimonials">
+        <div class="container">
+            <h2>Customer Testimonials</h2>
+            <!-- Testimonial cards will go here -->
+        </div>
+    </section>
+    <div id="chatbot-container">
+        <div class="chat-message">Welcome to our Cosmoclix Chatbot! How can we assist you today?</div>
+        <div class="user-input">
+            <input type="text" id="chat-input" placeholder="Type your message...">
+            <button id="send-btn">Send</button>
+        </div>
+    </div>
+    
+    <script>
+        document.getElementById('send-btn').addEventListener('click', function() {
+            var userInput = document.getElementById('chat-input').value;
+            sendMessage(userInput);
+            document.getElementById('chat-input').value = '';
+        });
+    
+        function sendMessage(message) {
+            var chatContainer = document.getElementById('chatbot-container');
+            var chatMessage = document.createElement('div');
+            chatMessage.classList.add('chat-message');
+            chatMessage.innerHTML = message;
+            chatContainer.insertBefore(chatMessage, chatContainer.lastElementChild);
+    
+            // Process user input and provide recommendations
+            processUserInput(message);
+        }
+    
+        function processUserInput(message) {
+            // Here you can implement logic to analyze user input and provide recommendations
+            // For simplicity, let's just provide a generic response for now
+            var recommendation = "Based on your input, we recommend trying our best-selling skincare products. Would you like to explore them?";
+            var chatContainer = document.getElementById('chatbot-container');
+            var chatMessage = document.createElement('div');
+            chatMessage.classList.add('chat-message');
+            chatMessage.innerHTML = recommendation;
+            chatContainer.insertBefore(chatMessage, chatContainer.lastElementChild);
+        }
+    </script>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 CosmoClix. All rights reserved.</p>
+            <ul>
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Terms of Service</a></li>
+            </ul>
+        </div>
+    </footer>
+
+</body>
+</html>

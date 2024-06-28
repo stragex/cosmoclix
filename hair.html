@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CosmoClix: Your skincare companion</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+    /* Reset CSS */
+    body{
+        color: #000000;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Global Styles */
+body {
+    
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+header, footer {
+    background-color: #f4f4f4;
+    padding: 20px 0;
+}
+
+header {
+    display: flex;
+    align-items: center; /* Center vertically */
+}
+
+header img {
+    margin-right: 20px; /* Add space between the image and nav */
+}
+
+header h1 {
+    font-size: 24px;
+    margin-right: auto; /* Push the navigation menu to the right */
+}
+
+nav ul {
+    list-style: none;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+}
+
+/* Hero Section */
+#hero {
+    background-image: url('hero-image.jpg');
+    background-size: cover;
+    color: #fff;
+    padding: 100px 0;
+    text-align: center;
+}
+
+#hero h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+#hero p {
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+.btn {
+    display: inline-block;
+    background-color: #118601;
+    color: #ffffff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #ff3b3b;
+}
+
+/* Featured Products Section */
+#featured {
+    padding: 50px 0;
+}
+
+#featured h2 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* Testimonials Section */
+#testimonials {
+    background-color: #f9f9f9;
+    padding: 50px 0;
+}
+
+#testimonials h2 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    font-size: 14px;
+    color: #777;
+    margin-top: 50px;
+}
+
+footer ul {
+    margin-top: 20px;
+}
+
+footer ul li {
+    display: inline;
+    margin-right: 10px;
+}
+
+footer ul li a {
+    color: #777;
+    text-decoration: none;
+}
+.product-card {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.product-card img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 10px;
+}
+
+.product-card h3 {
+    font-size: 18px;
+    color: #333;
+}
+a{
+    text-align: center;
+}
+#chatbot-container {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        width: 300px;
+        background-color: #f0f0f0;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        font-family: Arial, sans-serif;
+    }
+
+    /* Chat messages */
+    .chat-message {
+        padding: 10px;
+        border-bottom: 1px solid #ccc;
+        background-color: #fff;
+    }
+
+    /* User input */
+    .user-input {
+        padding: 10px;
+    }
+
+    /* Chat input */
+    #chat-input {
+        width: calc(100% - 20px);
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+        font-size: 14px;
+    }
+
+    /* Send button */
+    #send-btn {
+        width: 100%;
+        padding: 8px;
+        margin-top: 5px;
+        background-color: #4CAF50;
+        color: #fff;
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
+        font-size: 14px;
+    }
+
+    #send-btn:hover {
+        background-color: #45a049;
+    }
+
+    .dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  padding: 12px 16px;
+  z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+#countdown {
+    font-size: 24px;
+    text-align: center;
+    color: rgb(0, 115, 255);
+  }
+  
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container" style="text-align: center;">
+            <a href="#"><img src="huh.png" alt="CosmoClix" width="300px"></a><br><br>
+
+            <nav>
+                <ul>
+                    <li><a href="#" class="dropdown">Shop</a></li>
+                    <li><a href="#">Hair Care</a></li>
+                    <li><a href="#">Skin Care</a></li>
+                    <li><a href="#">Combo</a></li>
+                    <li><a href="#">Lifestyle</a></li>
+                    <li><a href="#">Our Blog</a></li>
+
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <p style="text-align: center; color: rgb(0, 115, 255);">Offer ends in</p>
+    <div id="countdown"></div>
+<script>
+  // Set the offer end date (year, month (0-based), day, hour, minute, second)
+  const offerEndDate = new Date('2024-06-16T23:59:59');
+
+  function updateCountdown() {
+    const now = new Date();
+    const timeDifference = offerEndDate - now;
+
+    // Calculate days, hours, minutes, and seconds
+    const days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
+
+    // Display the countdown
+    document.getElementById('countdown').innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+
+    // If the countdown is over, display a message
+    if (timeDifference < 0) {
+      document.getElementById('countdown').innerHTML = 'Offer has ended';
+    }
+  }
+
+  // Update the countdown every second
+  setInterval(updateCountdown, 1000);
+
+  // Initial call to display the countdown
+  updateCountdown();
+</script>
+
+    <section id="hero">
+        <div class="container">
+            <h2>Welcome to Our Store</h2>
+            <p>Discover our wide range of cosmetic products</p>
+            
+        </div>
+    </section>
+
+    <section id="featured">
+        <div class="container">
+            <h2>Essential Combos</h2>
+            <div class="product-card">
+                <img src="product1.jpg" alt="Product 1" width="300px">
+                <h4>Neem Comb Combo</h4><br>
+                <a href="#" class="btn">Shop Now</a>
+            </div>
+            <div class="product-card">
+                <img src="fss.png" alt="Combo 2" width="300px">
+                <h4>Face Wash, Skin Lightening and Sheet Mask Combo</h4><br>
+                <a href="#" class="btn">Shop Now</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="testimonials">
+        <div class="container">
+            <h2>Customer Testimonials</h2>
+            <!-- Testimonial cards will go here -->
+        </div>
+    </section>
+    <div id="chatbot-container">
+        <div class="chat-message">Welcome to our Cosmoclix Chatbot! How can we assist you today?</div>
+        <div class="user-input">
+            <input type="text" id="chat-input" placeholder="Type your message...">
+            <button id="send-btn">Send</button>
+        </div>
+    </div>
+    
+    <script>
+        document.getElementById('send-btn').addEventListener('click', function() {
+            var userInput = document.getElementById('chat-input').value;
+            sendMessage(userInput);
+            document.getElementById('chat-input').value = '';
+        });
+    
+        function sendMessage(message) {
+            var chatContainer = document.getElementById('chatbot-container');
+            var chatMessage = document.createElement('div');
+            chatMessage.classList.add('chat-message');
+            chatMessage.innerHTML = message;
+            chatContainer.insertBefore(chatMessage, chatContainer.lastElementChild);
+    
+            // Process user input and provide recommendations
+            processUserInput(message);
+        }
+    
+        function processUserInput(message) {
+            // Here you can implement logic to analyze user input and provide recommendations
+            // For simplicity, let's just provide a generic response for now
+            var recommendation = "Based on your input, we recommend trying our best-selling skincare products. Would you like to explore them?";
+            var chatContainer = document.getElementById('chatbot-container');
+            var chatMessage = document.createElement('div');
+            chatMessage.classList.add('chat-message');
+            chatMessage.innerHTML = recommendation;
+            chatContainer.insertBefore(chatMessage, chatContainer.lastElementChild);
+        }
+    </script>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 CosmoClix. All rights reserved.</p>
+            <ul>
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Terms of Service</a></li>
+            </ul>
+        </div>
+    </footer>
+</body>
+</html>
